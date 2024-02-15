@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap');
+@import url('utilities.css');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
+
+:root {
+    --primary: rgb(29, 221, 189);
+    --bgDark: rgb(0, 0, 0); /* Black Background */
+    --white: rgb(255, 255, 255);
+    --secondary: rgb(0, 0, 0);
+    --bgLight: rgb(0, 0, 0);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    background-color: var(--bgDark);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 73% 94%, 0 100%);
+}
+
+header nav .left a {
+    color: var(--white);
+    text-decoration: none;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    transition: all .2s ease;
+}
+
+header nav .left a:hover {
+    color: var(--primary);
+}
+
+header nav {
+    padding: 2rem 0;
+}
+
+header nav .logo {
+    margin-right: 3rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bgDark); /* Set the background color to black */}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.profile-info{
+    color: var(--white);
+}
+.recent-projects{
+    color: var(--white);
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.about-section {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 170%;
+    height: 550px;
+    overflow: hidden; /* Hide overflow to create a circular shape */
+    border-radius: 50%; /* Create a circular border */
+}
+
+.profile-info {
+    flex-grow: 1; /* Allow the profile info to grow */
+}
+
+.recent-projects {
+    flex: 1;
+}
+
+.recent-projects h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.overlay_5 {
+    inset: 0;
+    transform: scale(0);
+    transition: all .3s ease-in-out;
+  }
+  
+  .image_wrapper:hover .overlay_5 {
+    transform: scale(1);
+  }
+  
+  .icon i {
+    border-radius: 50%;
+    font-size: 40px;
+    color: #8c9e54;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.project-images {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Change the flex direction to row */
+}
+
+.project-images img {
+    width: auto; /* Adjust the width to fit the container */
+    height: 200px; /* Set a fixed height */
+    margin-right: 20px;
+    align-items: center; /* Add some margin between the images */
+}
+
+.project-images img:last-child {
+    margin-right: 0; /* Remove margin from the last image */
+}
+

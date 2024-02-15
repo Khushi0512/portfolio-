@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="proj1.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"
+rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<title>Portfolio</title>
+<style>
+    /* Add your CSS styles here */
+    .container {
+        position: relative;
+    }
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%; /* Adjust the width to 80% */
+        height: 98%; /* Match the height of the clickable image */
+        object-fit: cover;
+        z-index: -1;
+        opacity: 0.8; /* Adjust the opacity to 80% */
+    }
+
+    #profileImage {
+        position: relative;
+        z-index: 1;
+    }
+
+    .left {
+        position: relative;
+    }
+</style>
+</head>
+<body>
+    <header>  
+        <div class="container">  
+            <nav class="flex items-centre justify-between">  
+                <div class="left flex justfiy-right">  
+                    <div>  
+                        <a href="proj1.html">Home</a>  
+                        <a href="aboutus.html">About</a>  
+                        <a href="contactus.html">Contact Us</a>  
+                    </div>  
+                </div>  
+                <div class="right">  
+                    <a href="Khushi CV for freelancing.pdf" download>
+                        <button class="btn btn-primary">Download CV</button>
+                    </a>
+                </div>  
+            </nav>
+        </div>  
+    </header>
+    <div class="hero flex items-centre justify-between">
+        <div class="left flex-1 justify-center">
+            <img src="khushi.jpg" alt="Profile" id="profileImage" onclick="nextImage()">
+            <img src="blur.jpg" alt="Background Image" class="background-image">
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="right flex-1">
+            <br><br><br><br><br> 
+            <h2>Hello, It's Me</h2>
+            <h1>Khushi Thakkar</h1>
+            <h2 class="developer">Developer</h2>
+            <p>As a versatile Full Stack Web Developer currently interning at Codeway, I blend proficiency in web development with expertise in IoT projects. 
+                With a knack for content creation, I delve into captivating copywriting while also dabbling in video and graphics editing, 
+                adding a dynamic edge to my skill set.</p>
+        </div>
+    </div>
+
+    <script>
+        // Image array containing image URLs
+        var images = ["khushi.jpg", "khushii.jpg", "khushu.jpg"];
+        var currentIndex = 0;
+
+        // Function to change image to the next one in the array
+        function nextImage() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById("profileImage").src = images[currentIndex];
+        }
+
+        // Swipe functionality using touch events
+        var startX = 0;
+        var threshold = 100; // Swipe threshold in pixels
+
+        document.getElementById("profileImage").addEventListener("touchstart", function(event) {
+            startX = event.touches[0].clientX;
+        });
+
+        document.getElementById("profileImage").addEventListener("touchend", function(event) {
+            var endX = event.changedTouches[0].clientX;
+            var deltaX = endX - startX;
+            if (deltaX > threshold) {
+                nextImage(); // Swipe left
+            } else if (deltaX < -threshold) {
+                // Swipe right (can be implemented if needed)
+            }
+        });
+    </script>
+</body>
+</html>
